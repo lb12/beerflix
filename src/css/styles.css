@@ -1,0 +1,19 @@
+@import "variables.css";
+@import "reset.css";
+@import "navbar.css";
+@import "main-header.css";
+@import "main.css";
+
+* {
+    font-family: 'Roboto', sans-serif;
+    color: var(--normal-text-color);
+}
+
+a {
+    color: initial;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--body-color);
+}
