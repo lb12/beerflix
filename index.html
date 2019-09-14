@@ -17,11 +17,12 @@
   </head>
   <body>
     <header>
-      <!-- navbar section -->
+      <!-- navbar section-start -->
       <nav class="navbar">
         <a href="/" class="logo">BEERFLIX</a>
       </nav>
-      <!-- main-header section -->
+      <!-- navbar section-end -->
+      <!-- main-header section-start -->
       <section class="main-header">
         <picture>
           <source
@@ -43,9 +44,41 @@
           <img src="/img/beers-320@mobile.jpg" alt="beers" class="header-img" />
         </picture>
       </section>
+      <!-- main-header section-end -->
     </header>
-    <!-- main section  -->
+    <!-- main section-start  -->
     <main class="main">
+
+      <!-- filtering section-start -->
+      <section id="filter-section">
+        <div>
+          <span>Filter the beers !</span>
+          <i>V</i>
+        </div>
+        <div class="filter-container "> <!-- hide -->
+          <div class="filter-item">
+            <label for="name-filter">Beer name</label>
+            <input type="text" class="input" id="name-filter">
+          </div>
+          <div class="filter-item col-2">
+            <div class="">
+              <label for="date-filter">First brewed</label>
+              <input type="date" class="input" id="date-filter">
+            </div>
+            <div class="">
+              <label for="limit-filter">Beers shown</label>
+              <input type="number" class="input" min="0" max="10" id="limit-filter" value="10">
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- filtering section-end -->
+
+      <!-- results of filtering-start -->
+      <section>
+
+      </section>
+      <!-- results of filtering-end -->
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste corporis
         perspiciatis assumenda, dolores, debitis tempora aut sint accusamus
@@ -101,8 +134,10 @@
         reprehenderit maxime beatae!
       </p>
     </main>
-    <!-- footer section -->
+    <!-- main section-end  -->
+    <!-- footer section-start -->
     <footer></footer>
+    <!-- footer section-end -->
     <!-- scripts -->
   </body>
 </html>

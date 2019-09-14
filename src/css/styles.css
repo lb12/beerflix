@@ -1,5 +1,7 @@
 @import "variables.css";
 @import "reset.css";
+@import "input.css";
+@import "utils.css";
 @import "navbar.css";
 @import "main-header.css";
 @import "main.css";

@@ -2,3 +2,34 @@
     margin-left: 2.5rem;
     margin-right: 2.5rem;
 }
+
+/* filtering section-start */
+#filter-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter-container {
+    align-self: flex-start;
+    width: 100%;
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.col-2 {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.col-2 > div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* filtering section-end */
