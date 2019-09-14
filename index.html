@@ -51,24 +51,27 @@
 
       <!-- filtering section-start -->
       <section id="filter-section">
-        <div>
-          <span>Filter the beers !</span>
-          <i>V</i>
+        <div class="filters-toggle">
+          <span>Filter the beers</span>
+          <span>V</span>
         </div>
         <div class="filter-container "> <!-- hide -->
           <div class="filter-item">
-            <label for="name-filter">Beer name</label>
+            <label for="name-filter" class="label">Beer name</label>
             <input type="text" class="input" id="name-filter">
           </div>
           <div class="filter-item col-2">
             <div class="">
-              <label for="date-filter">First brewed</label>
+              <label for="date-filter" class="label">First brewed since</label>
               <input type="date" class="input" id="date-filter">
             </div>
             <div class="">
-              <label for="limit-filter">Beers shown</label>
+              <label for="limit-filter" class="label">Beers shown</label>
               <input type="number" class="input" min="0" max="10" id="limit-filter" value="10">
             </div>
+          </div>
+          <div class="filter-item submit-item">
+            <button type="submit" class="input">Filter</button>
           </div>
         </div>
       </section>

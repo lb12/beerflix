@@ -7,17 +7,35 @@
 #filter-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.filters-toggle {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bg-form-color);
+    padding: 1rem;
+    border-radius: .2rem;
+}
+
+.filters-toggle span {
+    color: var(--title-color);
+    font-weight: bold;
+    letter-spacing: .12rem;
 }
 
 .filter-container {
     align-self: flex-start;
+    margin-bottom: 1.5rem;
     width: 100%;
+    background-color: var(--bg-form-color);
 }
 
 .filter-item {
     display: flex;
     flex-direction: column;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
 }
 
 .col-2 {
@@ -27,9 +45,34 @@
     flex-wrap: wrap;
 }
 
+.filter-item.col-2 {
+    margin-top: .2rem;
+    margin-bottom: 1.2rem;
+}
+
 .col-2 > div {
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+
+.submit-item {
+    margin-top: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.submit-item > button {
+    color: var(--bg-color);
+    background-color: var(--title-color);
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+}
+
+.submit-item > button:hover {
+    background-color: var(--title-color-hover);
+    cursor: pointer;
 }
 
 /* filtering section-end */
