@@ -100,13 +100,13 @@
     width: 100%;
     margin-bottom: 2rem;
     align-items: center;
-    background-color: rgba(110, 130, 140, 0.6);
+    background-color:rgba(221, 156, 60, 0.7);
     border-radius: .3rem;
     box-shadow: #252C2F 0px 0px 0.4rem 0.4rem;
 }
 
 .beer-content-img {
-    height: 8rem;
+    height: 9rem;
     padding: 1rem;
 }
 
@@ -119,7 +119,7 @@
 
 .beer-name {
     font-size: 1.5rem;
-    color: var(--title-color-hover);
+    color: var(--normal-text-color);
     font-weight: bold;
     text-shadow: #252C2F .1rem .1rem;
     margin-bottom: 1rem;
