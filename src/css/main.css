@@ -1,7 +1,7 @@
 .main {
-    margin-top: 2.5rem;
-    margin-right: 2.5rem;
-    margin-left: 2.5rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
 }
 
 /* filtering section-start */
@@ -81,6 +81,70 @@
 /* beers section-start */
 #beers-section {
     margin-top: 2.5rem;
+}
+
+.beers-header {
+    margin-bottom: 2.5rem;
+}
+
+.beers-header > h1 {
+    font-size: 2.2rem;
+    width: 50%;
+    color: var(--title-color);
+    border-bottom: .2rem solid var(--title-color-hover);
+    padding: 0 0 .5rem;
+}
+
+.beer-card {
+    display: flex;
+    width: 100%;
+    margin-bottom: 2rem;
+    align-items: center;
+    background-color: rgba(110, 130, 140, 0.6);
+    border-radius: .3rem;
+    box-shadow: #252C2F 0px 0px 0.4rem 0.4rem;
+}
+
+.beer-content-img {
+    height: 8rem;
+    padding: 1rem;
+}
+
+.beer-content-text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.beer-name {
+    font-size: 1.5rem;
+    color: var(--title-color-hover);
+    font-weight: bold;
+    text-shadow: #252C2F .1rem .1rem;
+    margin-bottom: 1rem;
+}
+
+.beer-extra-fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: .8rem;
+}
+
+.beer-extra-fields div {
+    display: flex;
+    align-items: center;
+}
+
+.beer-extra-field {
+    padding-left: .3rem;
+    font-size: 1.2rem;
+}
+
+.beer-tips {
+    font-size: 1.2rem;
+    text-align: justify;
 }
 
 /* beers section-end */
