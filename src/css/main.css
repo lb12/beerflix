@@ -97,12 +97,16 @@
 
 .beer-card {
     display: flex;
-    width: 100%;
     margin-bottom: 2rem;
-    align-items: center;
     background-color:rgba(221, 156, 60, 0.7);
     border-radius: .3rem;
     box-shadow: #252C2F 0px 0px 0.4rem 0.4rem;
+}
+
+.beer-card a {
+    display: flex;
+    width: 100%;
+    align-items: center;
 }
 
 .beer-content-img {
