@@ -5,6 +5,7 @@
 @import "navbar.css";
 @import "main-header.css";
 @import "main.css";
+@import "footer.css";
 
 * {
     font-family: 'Roboto', sans-serif;
