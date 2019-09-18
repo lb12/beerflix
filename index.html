@@ -23,7 +23,10 @@
       </nav>
       <!-- navbar section-end -->
       <!-- main-header section-start -->
+
       <section class="main-header">
+
+        <!-- 
         <picture>
           <source
             srcset="
@@ -43,6 +46,8 @@
           />
           <img src="/img/beers-320@mobile.jpg" alt="beers" class="header-img" />
         </picture>
+        -->
+
       </section>
       <!-- main-header section-end -->
     </header>
@@ -50,7 +55,10 @@
     <main class="main">
 
       <!-- filtering section-start -->
-    <section id="filter-section">
+
+
+      <!-- 
+      <section id="filter-section">
         <div class="filters-toggle">
           <span>Filter the beers</span>
           <span>V</span>
@@ -75,9 +83,16 @@
           </div>
         </div>
       </section>
+      -->
+
+
       <!-- filtering section-end -->
 
       <!-- results of filtering-start -->
+
+
+
+      <!-- 
       <section id="beers-section">
         <header class="beers-header">
           <h1>Beers</h1>
@@ -85,12 +100,127 @@
 
         <div class="beers-container">
         </div>
+      </section> 
+      -->
 
-      </section>
+
+
       <!-- results of filtering-end -->
 
       <!-- beer-detail-start -->
+      <section class="detail-beer-section">
+        <!-- image -->
+        <div class="detail-beer-image-container">
+          <img class="detail-beer-image" src="https://images.punkapi.com/v2/4.png" alt="beer-image" srcset="">
+          <div class="detail-social-container">
+            <div>
+              <span id="detail-social-like-counter">0</span>
+              <img class="detail-like-btn" src="/img/icons/like.png" alt="">
+            </div>
+            <div>
+              <span id="detail-social-comment-counter">0</span>
+              <img class="detail-comment-btn" src="/img/icons/comment.png" alt="">
+            </div>
+          </div>
+        </div>
+        <!-- name -->
+        <h1 class="detail-beer-name">Avery Brown Dredge</h1>
+        <!-- price and firstBrewed -->
+        <div class="detail-beer-row-inline">
+          <div class="row-item row-item-left">
+            <img class="detail-beer-price" src="/img/icons/money.png" alt="">
+            <span>10</span>
+          </div>
+          <div class="row-item row-item-right">
+            <img class="detail-beer-firstBrewed" src="/img/icons/calendar.png" alt="">
+            <span>05/2017</span>
+          </div>
+        </div>
+        <!-- ingredients -->
+        <div class="detail-beer-info-section">
+          <h2>Ingredients</h2>
+  
+          <ul class="detail-beer-ingredients">
+            <li>3.3kg of <i style="font-style: italic;">Maris Otter Extra Pale</i> malt</li>
+            <li>0.2kg of 'Caramalt' malt</li>
+            <li>25g of 'Fuggles' hop</li>
+            <li>25g of 'First Gold' hop</li>
+            <li>'Wyeast 1056 - American Ale™' yeast</li>
+          </ul>
+        </div>
+
+        <!--
+          "ingredients": {
+        "malt": [                                            Malta
+          { 3.3kg of 'Maris Otter Extra Pale' malt
+            "name": "Maris Otter Extra Pale",
+            "amount": {
+              "value": 3.3,
+              "unit": "kilograms"
+            }
+          },
+          { 0.2kg of 'Caramalt' malt
+            "name": "Caramalt",
+            "amount": {
+              "value": 0.2,
+              "unit": "kilograms"
+            }
+          }
+        ],
+        "hops": [                                             Lúpulo
+          { 25g of 'Fuggles' hop
+            "name": "Fuggles",
+            "amount": {
+              "value": 25,
+              "unit": "grams"
+            },
+            "add": "start",
+            "attribute": "bitter"
+          },
+          { 25g of 'First Gold' hop
+            "name": "First Gold",
+            "amount": {
+              "value": 25,
+              "unit": "grams"
+            },
+            "add": "start",
+            "attribute": "bitter"
+          }
+        ],
+        "yeast": "Wyeast 1056 - American Ale™"  ==> 'Wyeast 1056 - American Ale™' yeast               Levadura
+      }
+        -->
+
+        <!-- description -->
+        <div class="detail-beer-info-section">
+          <h2>Description</h2>
+          <p class="detail-beer-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta nobis labore illo tenetur, tempore omnis unde rem voluptatem magni iusto itaque distinctio recusandae similique praesentium, facere nulla qui iure nesciunt.</p>
+        </div>
       
+        <!-- brewerTips -->
+        <div class="detail-beer-info-section">
+          <h2>Brewer tips</h2>
+          <p class="detail-beer-brewerTips">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere veniam quibusdam dolore autem minima ducimus in sed recusandae placeat totam enim, aut dolorum unde laboriosam temporibus officia libero modi? Mollitia!</p>
+        </div>
+        
+        <!-- contributed by -->
+        <div class="detail-beer-info-section">
+          <h2>Contributed by</h2>
+          <p class="detail-beer-contributed-by">Ali Skinner <AliSkinner> </p>
+        </div>
+        
+        <aside class="detail-comments-section">
+          <div class="detail-beer-info-section">
+            <h2>Comments</h2>
+            <div class="detail-comments-history">
+            </div>
+            <div class="">
+              <textarea class="detail-comments-comment" name="" id="" cols="30" rows="10"></textarea>
+              <button class="detail-comments-send-comment">Enviar</button>
+            </div>
+          </div>
+        </aside>
+      </section>
       <!-- beer-detail-end -->
 
     </main>
