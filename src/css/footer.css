@@ -5,8 +5,6 @@
     align-items: center;
     height: 8rem;
     background-color: var(--bg-color);
-    margin-right: 2rem;
-    margin-left: 2rem;
 }
 
 .main-footer aside {
@@ -15,6 +13,8 @@
     align-items: center;
     font-size: 1.2rem;
     font-family: 'Roboto', sans-serif;
+    margin-right: 2rem;
+    margin-left: 2rem;
 }
 
 .footer-terms-contact {

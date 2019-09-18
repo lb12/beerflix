@@ -1,0 +1,15 @@
+.detail-beer-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+}
+
+.detail-beer-name {
+    color: var(--title-color);
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.detail-beer-image {
+    
+}

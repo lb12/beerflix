@@ -137,7 +137,6 @@ const renderBeersDOM = async (filters) => {
 };
 
 const renderBeers = ( element, beers, filters ) => {
-    console.log(beers);
     const htmlBeers = beers.slice(0, 10).map((beer, index) => {
         return beerTemplate( { ...beer } );
     }).join('');
