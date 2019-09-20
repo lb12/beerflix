@@ -32,6 +32,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 49%;
 }
 
 .detail-social-container div span {

@@ -7,6 +7,15 @@
     font-size: 1.2rem;
 }
 
+.submit-button {
+    color: var(--bg-color);
+    background-color: var(--title-color);
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+}
+
 .label {
     font-size: 1.3rem;
     color: var(--subtitle-color);

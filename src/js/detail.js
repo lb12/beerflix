@@ -12,7 +12,7 @@ let beerDetailTemplate = ({image, name, price, firstBrewed,
         <span id="detail-social-like-counter">${likes}</span>
         <img class="detail-like-btn" src="/img/icons/like.png" alt="">
       </div>
-      <div>
+      <div id="comment-counter-container">
         <span id="detail-social-comment-counter">${commentsCounter}</span>
         <img class="detail-comment-btn" src="/img/icons/comment.png" alt="">
       </div>
