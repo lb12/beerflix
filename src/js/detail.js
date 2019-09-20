@@ -1,5 +1,7 @@
 'use strict';
 
+import { renderComments } from './comments.js';
+
 let beerDetailTemplate = ({image, name, price, firstBrewed, 
                            ingredients, description, brewersTips,
                            contributedBy, likes, commentsCounter }) => `
@@ -50,109 +52,102 @@ let beerDetailTemplate = ({image, name, price, firstBrewed,
 
 
 let detailBeer = ` {
-  "_id": "5d761441e714c7006a5d27d8",
-  "beerId": 4,
-  "name": "Pilsen Lager",
-  "description": "Our Unleash the Yeast series was an epic experiment into the differences in aroma and flavour provided by switching up your yeast. We brewed up a wort with a light caramel note and some toasty biscuit flavour, and hopped it with Amarillo and Centennial for a citrusy bitterness. Everything else is down to the yeast. Pilsner yeast ferments with no fruity esters or spicy phenols, although it can add a hint of butterscotch.",
-  "image": "https://images.punkapi.com/v2/4.png",
+  "_id": "5d761441e714c7006a5d27d5",
+  "beerId": 1,
+  "name": "Buzz",
+  "description": "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.",
+  "image": "https://images.punkapi.com/v2/keg.png",
   "ingredients": {
     "malt": [
       {
-        "name": "Extra Pale",
+        "name": "Maris Otter Extra Pale",
         "amount": {
-          "value": 4.58,
+          "value": 3.3,
           "unit": "kilograms"
         }
       },
       {
         "name": "Caramalt",
         "amount": {
-          "value": 0.25,
-          "unit": "kilograms"
-        }
-      },
-      {
-        "name": "Dark Crystal",
-        "amount": {
-          "value": 0.06,
+          "value": 0.2,
           "unit": "kilograms"
         }
       },
       {
         "name": "Munich",
         "amount": {
-          "value": 0.25,
+          "value": 0.4,
           "unit": "kilograms"
         }
       }
     ],
     "hops": [
       {
-        "name": "Centennial",
+        "name": "Fuggles",
         "amount": {
-          "value": 5,
+          "value": 25,
           "unit": "grams"
         },
         "add": "start",
         "attribute": "bitter"
       },
       {
-        "name": "Amarillo",
+        "name": "First Gold",
         "amount": {
-          "value": 5,
+          "value": 25,
           "unit": "grams"
         },
         "add": "start",
         "attribute": "bitter"
       },
       {
-        "name": "Centennial",
+        "name": "Fuggles",
         "amount": {
-          "value": 10,
+          "value": 37.5,
           "unit": "grams"
         },
         "add": "middle",
         "attribute": "flavour"
       },
       {
-        "name": "Amarillo",
+        "name": "First Gold",
         "amount": {
-          "value": 10,
+          "value": 37.5,
           "unit": "grams"
         },
         "add": "middle",
         "attribute": "flavour"
       },
       {
-        "name": "Centennial",
+        "name": "Cascade",
         "amount": {
-          "value": 17.5,
-          "unit": "grams"
-        },
-        "add": "end",
-        "attribute": "flavour"
-      },
-      {
-        "name": "Amarillo",
-        "amount": {
-          "value": 17.5,
+          "value": 37.5,
           "unit": "grams"
         },
         "add": "end",
         "attribute": "flavour"
       }
     ],
-    "yeast": "Wyeast 2007 - Pilsen Lager™"
+    "yeast": "Wyeast 1056 - American Ale™"
   },
-  "firstBrewed": "09/2013",
-  "brewersTips": "Play around with the fermentation temperature to get the best flavour profile from the individual yeasts.",
-  "contributedBy": "Ali Skinner <AliSkinner>",
+  "firstBrewed": "09/2007",
+  "brewersTips": "The earthy and floral aromas from the hops can be overpowering. Drop a little Cascade in at the end of the boil to lift the profile with a bit of citrus.",
+  "contributedBy": "Sam Mason <samjbmason>",
   "likes": 0,
   "comments": [],
-  "price": 9,
-  "apiKey": "F40XM1J-XYP4CV9-HC3RZRB-BJMWWQN"
+  "price": 5,
+  "apiKey": "F40XM1J-XYP4CV9-HC3RZRB-BJMWWQN",
+  "comment": [
+    {
+      "comment": "Probando comentario",
+      "dateComment": "2019-09-19T07:21:20.161Z"
+    },
+    {
+      "comment": "Probando SEGUNDO comentario",
+      "dateComment": "2019-09-19T07:22:47.565Z"
+    }
+  ]
 }`;
-
 
 const parseIngredientesToHTML = beer => {  
   const getArrayIngredients = (ingredient, mainName) => {
@@ -174,18 +169,19 @@ const parseIngredientesToHTML = beer => {
 };
 
 const addCustomFields = beer => {
-  beer.commentsCounter = beer.comments.length;
+  beer.commentsCounter = beer.comment ? beer.comment.length : 0;
   beer.ingredients = parseIngredientesToHTML(beer);
 };
 
 const renderDetail = async id => {
   try {
     const selector = document.querySelector('.detail-beer-section');
-    // Obtener via API la cerveza detail y los comentarios de esta.
-    const beer = JSON.parse(detailBeer);
+    const beer = JSON.parse(detailBeer); // Obtener via API la cerveza detail y los comentarios de esta.
+
     addCustomFields(beer);
-    const comments = beer.comments;
+
     selector.innerHTML = beerDetailTemplate(beer);
+    renderComments(beer.comment);
   }catch(err) {
     console.error(err);
   }
