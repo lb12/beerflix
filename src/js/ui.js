@@ -27,7 +27,7 @@ export const showHomePageElements = () => { showMainHeaderPicture(); showFilterS
 export const hideHomePageElements = () => { hideMainHeaderPicture(); hideFilterSection(); hideBeersSection(); };
 export const showMainHeaderPicture = () => mainHeaderPicture.style.display = 'block';
 export const hideMainHeaderPicture = () => mainHeaderPicture.style.display = 'none';
-export const showFilterSection = () => filterSection.style.display = 'block';
+export const showFilterSection = () => filterSection.style.display = 'flex';
 export const hideFilterSection = () => filterSection.style.display = 'none';
 export const showBeersSection = () => beersSection.style.display = 'block';
 export const hideBeersSection = () => beersSection.style.display = 'none';
