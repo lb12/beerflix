@@ -98,7 +98,8 @@
     margin-bottom: 0rem;
 }
 
-.detail-beer-section p {
+.detail-beer-section p,
+.comment-section p {
     font-size: 1.1rem;
     text-align: justify;
 }
@@ -119,7 +120,7 @@
 }
 
 .detail-comments-history {
-    margin-top: 3rem;
+    margin-top: 4rem;
 }
 
 .comment-section {
