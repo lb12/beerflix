@@ -49,67 +49,73 @@
     </header>
     <!-- main section-start  -->
     <main class="main">
-      <!-- filtering section-start -->
-      <section id="filter-section">
-        <div class="filters-toggle">
-          <span>Filter the beers</span>
-          <span>V</span>
-        </div>
-        <div class="filter-container hide">
-          <div class="filter-item">
-            <label for="name-filter" class="label">Beer name</label>
-            <input type="text" class="input" id="name-filter">
+      <!-- home-beer-page-start -->
+      <section id="home-main-info-page">
+        <!-- filtering section-start -->
+        <section id="filter-section">
+          <div class="filters-toggle">
+            <span>Filter the beers</span>
+            <span>V</span>
           </div>
-          <div class="filter-item">
-            <label for="date-filter" class="label">First brewed since</label>
-            <input type="date" class="input" id="date-filter">
+          <div class="filter-container hide">
+            <div class="filter-item">
+              <label for="name-filter" class="label">Beer name</label>
+              <input type="text" class="input" id="name-filter">
+            </div>
+            <div class="filter-item">
+              <label for="date-filter" class="label">First brewed since</label>
+              <input type="date" class="input" id="date-filter">
+            </div>
+            <div class="filter-item submit-item">
+              <button type="submit" class="input">Filter</button>
+            </div>
           </div>
-          <div class="filter-item submit-item">
-            <button type="submit" class="input">Filter</button>
+        </section>
+        <!-- filtering section-end -->
+  
+        <!-- results of filtering-start -->      
+        <section id="beers-section">
+          <header class="beers-header">
+            <h1>Beers</h1>
+          </header>
+  
+          <div class="beers-container">
           </div>
-        </div>
+        </section> 
+        <!-- results of filtering-end -->
       </section>
-      <!-- filtering section-end -->
+      <!-- home-beer-page-end -->
 
-      <!-- results of filtering-start -->      
-      <section id="beers-section">
-        <header class="beers-header">
-          <h1>Beers</h1>
-        </header>
-
-        <div class="beers-container">
-        </div>
-      </section> 
-      <!-- results of filtering-end -->
-
-      <!-- beer-detail-start -->
-      <section class="detail-beer-section"></section>
-      <section class="detail-comments-section">
-        <div class="detail-beer-info-section">
-          <h2>Comments</h2>
-          <div class="detail-comments-creation-section">
-            <textarea class="create-comment-textarea" name="" id="" cols="30" rows="10"></textarea>
-            <button class="input send-comment-button">Enviar</button>
+      <!-- detail-beer-page-start -->
+      <section id="detail-main-info-page">
+        <section class="detail-beer-section"></section>
+        <section class="detail-comments-section">
+          <div class="detail-beer-info-section">
+            <h2>Comments</h2>
+            <div class="detail-comments-creation-section">
+              <textarea class="create-comment-textarea" name="" id="" cols="30" rows="10"></textarea>
+              <button class="input send-comment-button">Enviar</button>
+            </div>
+            <div class="detail-comments-history">
+                <!-- <div class="comment-section">
+                  <span class="comment-date">2019-09-19T07:21:20.161Z</span>
+                  <p class="comment-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni nobis mollitia, quibusdam libero distinctio corrupti totam accusantium a inventore neque sint laboriosam, recusandae qui provident consectetur quo! Architecto, ipsa! Accusantium.
+                  </p>
+                  <div class="separator-line"></div>
+                </div>
+                <div class="comment-section">
+                  <span class="comment-date">2019-09-19T07:21:20.161Z</span>
+                  <p class="comment-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni nobis mollitia, quibusdam libero distinctio corrupti totam accusantium a inventore neque sint laboriosam, recusandae qui provident consectetur quo! Architecto, ipsa! Accusantium.
+                  </p>
+                  <div class="separator-line"></div>
+                </div> -->
+            </div>            
           </div>
-          <div class="detail-comments-history">
-              <!-- <div class="comment-section">
-                <span class="comment-date">2019-09-19T07:21:20.161Z</span>
-                <p class="comment-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni nobis mollitia, quibusdam libero distinctio corrupti totam accusantium a inventore neque sint laboriosam, recusandae qui provident consectetur quo! Architecto, ipsa! Accusantium.
-                </p>
-                <div class="separator-line"></div>
-              </div>
-              <div class="comment-section">
-                <span class="comment-date">2019-09-19T07:21:20.161Z</span>
-                <p class="comment-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni nobis mollitia, quibusdam libero distinctio corrupti totam accusantium a inventore neque sint laboriosam, recusandae qui provident consectetur quo! Architecto, ipsa! Accusantium.
-                </p>
-                <div class="separator-line"></div>
-              </div> -->
-          </div>            
-        </div>
+        </section>
       </section>
-      <!-- beer-detail-end -->
+      <!-- detail-beer-page-end -->
     </main>
     <!-- main section-end  -->
 

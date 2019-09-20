@@ -184,6 +184,7 @@ const renderDetail = async id => {
     // Obtener via API la cerveza detail y los comentarios de esta.
     const beer = JSON.parse(detailBeer);
     addCustomFields(beer);
+    const comments = beer.comments;
     selector.innerHTML = beerDetailTemplate(beer);
   }catch(err) {
     console.error(err);
