@@ -1,5 +1,6 @@
 'use strict';
 
+import { getBeerDetail } from './api.js';
 import { renderComments } from './comments.js';
 
 let beerDetailTemplate = ({image, name, price, firstBrewed, 
@@ -176,7 +177,7 @@ const addCustomFields = beer => {
 const renderDetail = async id => {
   try {
     const selector = document.querySelector('.detail-beer-section');
-    const beer = JSON.parse(detailBeer); // Obtener via API la cerveza detail y los comentarios de esta.
+    const beer = await getBeerDetail(id) // Obtener via API la cerveza detail y los comentarios de esta.
 
     addCustomFields(beer);
 
