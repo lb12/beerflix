@@ -103,6 +103,44 @@
     text-align: justify;
 }
 
-.detail-comments-comment {
+.create-comment-textarea {
+    height: 5rem;
+    color: var(--bg-form-color);
     width: 100%;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 0.1rem;
+    padding: 1rem;
+}
+
+.send-comment-button {
+    width: 100%;
+    margin-top: 1.2rem;    
+}
+
+.detail-comments-history {
+    margin-top: 3rem;
+}
+
+.comment-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.comment-date {
+    font-size: 1rem;
+    text-align: right;
+}
+
+.comment-text {
+    margin-top: 1rem;
+}
+
+.separator-line {
+    height: 1rem;
+    width: 60%;
+    border-bottom: .1rem solid var(--title-color-hover);
+    margin-top: 1rem;
+    align-self: center;
 }
