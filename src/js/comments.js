@@ -15,10 +15,13 @@ const commentTemplate = ({ dateComment, comment }) => `
  * @param {Array} comments 
  */
 const renderComments = comments => {
-    if(comments) {
-        const selector = document.querySelector('.detail-comments-history');
-        selector.innerHTML = comments.map(commentTemplate).join('');
-    }
+    const selector = document.querySelector('.detail-comments-history');
+    let content = '';
+    
+    if(comments)
+        content = comments.map(commentTemplate).join('');
+
+    selector.innerHTML = content;
     commentEventHandler();
 };
 
