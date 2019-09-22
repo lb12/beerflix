@@ -2,6 +2,7 @@
 
 import { getBeerDetail } from './api.js';
 import { renderComments } from './comments.js';
+import { renderLoader } from './ui.js';
 
 let beerDetailTemplate = ({beerId, image, name, price, firstBrewed, 
                            ingredients, description, brewersTips,
@@ -79,6 +80,7 @@ const addCustomFields = beer => {
 
 const renderDetail = async id => {
   try {
+    renderLoader('hide', 'show');
     const selector = document.querySelector('.detail-beer-section');
     const beer = await getBeerDetail(id);
 
@@ -86,8 +88,10 @@ const renderDetail = async id => {
 
     selector.innerHTML = beerDetailTemplate(beer);
     renderComments(beer.comment);
-  }catch(err) {
+  } catch(err) {
     console.error(err);
+  } finally {
+    renderLoader('show', 'hide');
   }
 };
 

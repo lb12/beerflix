@@ -1,6 +1,7 @@
 'use strict';
 
 import { getBeers } from './api.js';
+import { renderLoader } from './ui.js';
 
 const beerTemplate = ({ beerId, image, name, price, firstBrewed, brewersTips }) => `
     <article class="beer-card">
@@ -26,7 +27,7 @@ const beerTemplate = ({ beerId, image, name, price, firstBrewed, brewersTips }) 
 
 const renderBeersDOM = async (filters) => {
     try {
-        console.log('Call here loader starter');
+        renderLoader('hide', 'show');
         const beersSection = document.querySelector('.beers-container');
         const beers = await getBeers();
 
@@ -34,7 +35,7 @@ const renderBeersDOM = async (filters) => {
     } catch (error) {
         console.error(error);
     } finally {
-        console.log('Call here loader ender');
+        renderLoader('show', 'hide');
     }
 };
 

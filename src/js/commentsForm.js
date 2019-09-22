@@ -1,6 +1,7 @@
 'use strict';
 
 import { setBeerComment } from './api.js';
+import { renderLoader } from './ui.js';
 
 const commentEventHandler = () => {
     const commentSection = document.querySelector('.detail-comments-section');
@@ -13,6 +14,7 @@ const commentEventHandler = () => {
         const beerId = document.querySelector('#beer-id').value;
 
         if(commentText.value !== "") {
+            renderLoader('hide', 'show');
             await setBeerComment( beerId, commentText.value );
             window.location.reload();
         }

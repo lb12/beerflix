@@ -1,14 +1,20 @@
 'use strict';
 
-// const handleElementToggled = toggle(element);
-
-// handleElementToggled('classToRemove', 'classToAdd');
-// toggle(element)('classToRemove', 'classToAdd');
+/*  How to use toggle info:
+const handleElementToggled = toggle(element);
+handleElementToggled('classToRemove', 'classToAdd');
+toggle(element)('classToRemove', 'classToAdd');
+*/
 export const toggle = element => (removeClass, addClass) => {
     element.classList.remove(removeClass);
     element.classList.add(addClass);
 };
 
+// Previous loader showing info
+const loader = document.querySelector('#loader');
+export const renderLoader = toggle(loader);
+
+// Scroll page to the top util method
 export const scrollTop = () => window.scrollTo(0, 0);
 
 

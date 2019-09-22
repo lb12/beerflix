@@ -13,7 +13,7 @@ const createLikesListener = beerId => {
         evt.preventDefault();  
         setBeerLike( beerId ).then( success => {
             if(!success) // If error, we substract the like added before
-            updateLikeCounter(success);
+                updateLikeCounter(success);
         } );
         updateLikeCounter(true); // Show first the like, to improve UX
     } );
