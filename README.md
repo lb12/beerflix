@@ -1,6 +1,7 @@
 # Beerflix
 
 This is a project for the Advanced Frontend module of Keepcoding Web Full Stack Bootcamp VII course.
+You can see it here `https://beerflix-lb.herokuapp.com/`.
 
 ## How to
 
@@ -20,3 +21,4 @@ In resume, you can do:
 * Comment and rate beers.
 
 You can do all that in mobile, tablet and desktop devices.
+
