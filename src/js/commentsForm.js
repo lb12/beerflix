@@ -19,6 +19,7 @@ const commentEventHandler = () => {
 
         const spanError = document.querySelector('.detail-comments-creation-section span.error');
 
+        // Show error if no comment text
         if (commentText.value === "") { 
             if(spanError.classList.contains('hide'))
                 toggle(spanError)('hide', 'show');
