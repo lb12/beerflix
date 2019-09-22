@@ -46,7 +46,9 @@ formSubmitBtn.addEventListener('click', evt => {
     renderBeersDOM(filters);
 });
 
-
+/**
+ * Loads filters info from local storage if exists
+ */
 const loadFiltersInfo = () => {
     if (localStorage.getItem('filters') === null)
         return;

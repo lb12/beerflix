@@ -10,6 +10,10 @@ const commentTemplate = ({ dateComment, comment }) => `
     </div>
 `;
 
+/**
+ * Renders all the beer comments and prepare the event listeners
+ * @param {Array} comments 
+ */
 const renderComments = comments => {
     if(comments) {
         const selector = document.querySelector('.detail-comments-history');

@@ -53,7 +53,9 @@ let beerDetailTemplate = ({beerId, image, name, price, firstBrewed,
   </div>
 `;
 
-
+/**
+ * Parse the ingredients objects to string of 'li' html elements
+ */
 const parseIngredientesToHTML = beer => {  
   const getArrayIngredients = (ingredient, mainName) => {
     let ingredientText = '';

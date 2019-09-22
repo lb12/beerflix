@@ -52,6 +52,9 @@ const renderBeers = beers => {
     beersSection.innerHTML = ` ${htmlBeers} `;
 };
 
+/**
+ * Filter date here because API does not provide this functionality
+ */
 const applyLocalFilters = (beers, filters) => {
     if ( filters ) {
         if ( filters.date )
@@ -61,6 +64,11 @@ const applyLocalFilters = (beers, filters) => {
     return beers;
 }
 
+/**
+ * Filters all the beers that are equal or higher than filteredDate
+ * @param {Array} beers 
+ * @param {string} filteredDate 
+ */
 const getBeersByDate = (beers, filteredDate) => {
     let filteredBeers = [];
     if ( beers.length > 0 ) {

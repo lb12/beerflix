@@ -3,6 +3,9 @@
 import { setBeerComment } from './api.js';
 import { renderLoader } from './ui.js';
 
+/**
+ * Handles the submit of a new comment
+ */
 const commentEventHandler = () => {
     const commentSection = document.querySelector('.detail-comments-section');
     const sendButton = document.querySelector('.send-comment-button');    
