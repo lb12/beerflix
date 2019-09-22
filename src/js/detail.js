@@ -32,20 +32,24 @@ let beerDetailTemplate = ({beerId, image, name, price, firstBrewed,
       <span>${firstBrewed}</span>
     </div>
   </div>
-  <div class="detail-beer-info-section">
-    <h2>Ingredients</h2>
+  <div class="detail-beer-process">
+    <div class="detail-beer-info-section">
+      <h2>Ingredients</h2>
 
-    <ul class="detail-beer-ingredients">
-      ${ingredients}
-    </ul>
-  </div>
-  <div class="detail-beer-info-section">
-    <h2>Description</h2>
-    <p class="detail-beer-description">${description}</p>
-  </div>  
-  <div class="detail-beer-info-section">
-    <h2>Brewer tips</h2>
-    <p class="detail-beer-brewerTips">${brewersTips}</p>
+      <ul class="detail-beer-ingredients">
+        ${ingredients}
+      </ul>
+    </div>
+    <div class="detail-beer-description-tips">
+      <div class="detail-beer-info-section">
+        <h2>Description</h2>
+        <p class="detail-beer-description">${description}</p>
+      </div>  
+      <div class="detail-beer-info-section">
+        <h2>Brewer tips</h2>
+        <p class="detail-beer-brewerTips">${brewersTips}</p>
+      </div>
+    </div>
   </div>
   <div class="detail-beer-info-section">
     <h2>Contributed by</h2>

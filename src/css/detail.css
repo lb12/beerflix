@@ -146,3 +146,36 @@
     margin-top: 1rem;
     align-self: center;
 }
+
+@media (min-width: 1024px) {
+
+    .detail-beer-row-inline {
+        justify-content: flex-start;
+    }
+
+    .row-item-left {
+        margin-right: 5rem;
+    }
+
+    .detail-beer-process {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .detail-beer-info-section {
+        flex-basis: 40%;
+    }
+
+    .detail-beer-description-tips {
+        flex-basis: 56%;
+        margin-left: 2rem;
+    }
+}
+
+@media (min-width: 1280px) {
+  
+    #detail-main-info-page {
+        margin: auto 10rem;
+    }
+    
+}
