@@ -5,8 +5,8 @@ const API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh/api/v1
 
 const beersAPIEndpoint = `${API_URL}beers`;
 
-const getBeers = async (beerName) => {
-    const url = beerName ? `${beersAPIEndpoint}&search=${beerName}` : beersAPIEndpoint;
+const getBeers = async (filters) => {
+    const url = filters ? `${beersAPIEndpoint}?search=${filters.name}` : beersAPIEndpoint;
     let beers = [];
     await axios(
     { 

@@ -2,6 +2,8 @@
 
 import { getBeers } from './api.js';
 import { renderLoader } from './ui.js';
+import { getDate } from './utils.js';
+
 
 const beerTemplate = ({ beerId, image, name, price, firstBrewed, brewersTips }) => `
     <article class="beer-card">
@@ -28,10 +30,11 @@ const beerTemplate = ({ beerId, image, name, price, firstBrewed, brewersTips }) 
 const renderBeersDOM = async (filters) => {
     try {
         renderLoader('hide', 'show');
-        const beersSection = document.querySelector('.beers-container');
-        const beers = await getBeers();
+        
+        let beers = await getBeers( filters );
+        beers = applyLocalFilters(beers, filters);
 
-        renderBeers(beersSection, beers, filters);
+        renderBeers(beers);
     } catch (error) {
         console.error(error);
     } finally {
@@ -39,12 +42,32 @@ const renderBeersDOM = async (filters) => {
     }
 };
 
-const renderBeers = ( element, beers, filters ) => {
+const renderBeers = beers => {
+    const beersSection = document.querySelector('.beers-container');
+
     const htmlBeers = beers.slice(0, 10).map((beer, index) => {
         return beerTemplate( { ...beer } );
     }).join('');
 
-    element.innerHTML = ` ${htmlBeers} `;
+    beersSection.innerHTML = ` ${htmlBeers} `;
+};
+
+const applyLocalFilters = (beers, filters) => {
+    if ( filters ) {
+        if ( filters.date )
+            beers = getBeersByDate( beers, filters.date );
+    }
+
+    return beers;
+}
+
+const getBeersByDate = (beers, filteredDate) => {
+    let filteredBeers = [];
+    if ( beers.length > 0 ) {
+        const _filteredDate = getDate(filteredDate);
+        filteredBeers = beers.filter( beer => ( getDate(beer.firstBrewed).getTime() >= _filteredDate.getTime() ) );
+    } 
+    return filteredBeers;
 };
 
 export { renderBeersDOM };
