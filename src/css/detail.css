@@ -22,7 +22,7 @@
     height: 3rem;
     position: absolute;
     bottom: 0rem;
-    background: var(--title-color-hover);
+    background: var(--title-color);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -117,6 +117,13 @@
 .send-comment-button {
     width: 100%;
     margin-top: 1.2rem;    
+}
+
+.send-comment-button:hover,
+#comment-counter-container:hover,
+#likes-counter-container:hover {
+    background-color: var(--title-color-hover);
+    cursor: pointer;
 }
 
 .detail-comments-history {
