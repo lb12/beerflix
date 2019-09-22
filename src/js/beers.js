@@ -8,7 +8,9 @@ import { getDate } from './utils.js';
 const beerTemplate = ({ beerId, image, name, price, firstBrewed, brewersTips }) => `
     <article class="beer-card">
         <a href="/detail/${beerId}">
-            <img src="${image}" alt="beer-img-${beerId}" class="beer-content-img" />
+            <div class="beer-img-container">
+                <img src="${image}" alt="beer-img-${beerId}" class="beer-content-img" />
+            </div>
             <div class="beer-content-text">
                 <h2 class="beer-name">${name}</h2>
                 <div class="beer-extra-fields">
