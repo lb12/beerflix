@@ -3,13 +3,14 @@
 import { getBeerDetail } from './api.js';
 import { renderComments } from './comments.js';
 
-let beerDetailTemplate = ({image, name, price, firstBrewed, 
+let beerDetailTemplate = ({beerId, image, name, price, firstBrewed, 
                            ingredients, description, brewersTips,
                            contributedBy, likes, commentsCounter }) => `
   <div class="detail-beer-image-container">
+    <input type="hidden" id="beer-id" value="${beerId}"/>
     <img class="detail-beer-image" src="${image}" alt="beer-image" srcset="">
     <div class="detail-social-container">
-      <div>
+      <div id="likes-counter-container">
         <span id="detail-social-like-counter">${likes}</span>
         <img class="detail-like-btn" src="/img/icons/like.png" alt="">
       </div>
@@ -52,104 +53,6 @@ let beerDetailTemplate = ({image, name, price, firstBrewed,
 `;
 
 
-let detailBeer = ` {
-  "_id": "5d761441e714c7006a5d27d5",
-  "beerId": 1,
-  "name": "Buzz",
-  "description": "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.",
-  "image": "https://images.punkapi.com/v2/keg.png",
-  "ingredients": {
-    "malt": [
-      {
-        "name": "Maris Otter Extra Pale",
-        "amount": {
-          "value": 3.3,
-          "unit": "kilograms"
-        }
-      },
-      {
-        "name": "Caramalt",
-        "amount": {
-          "value": 0.2,
-          "unit": "kilograms"
-        }
-      },
-      {
-        "name": "Munich",
-        "amount": {
-          "value": 0.4,
-          "unit": "kilograms"
-        }
-      }
-    ],
-    "hops": [
-      {
-        "name": "Fuggles",
-        "amount": {
-          "value": 25,
-          "unit": "grams"
-        },
-        "add": "start",
-        "attribute": "bitter"
-      },
-      {
-        "name": "First Gold",
-        "amount": {
-          "value": 25,
-          "unit": "grams"
-        },
-        "add": "start",
-        "attribute": "bitter"
-      },
-      {
-        "name": "Fuggles",
-        "amount": {
-          "value": 37.5,
-          "unit": "grams"
-        },
-        "add": "middle",
-        "attribute": "flavour"
-      },
-      {
-        "name": "First Gold",
-        "amount": {
-          "value": 37.5,
-          "unit": "grams"
-        },
-        "add": "middle",
-        "attribute": "flavour"
-      },
-      {
-        "name": "Cascade",
-        "amount": {
-          "value": 37.5,
-          "unit": "grams"
-        },
-        "add": "end",
-        "attribute": "flavour"
-      }
-    ],
-    "yeast": "Wyeast 1056 - American Ale™"
-  },
-  "firstBrewed": "09/2007",
-  "brewersTips": "The earthy and floral aromas from the hops can be overpowering. Drop a little Cascade in at the end of the boil to lift the profile with a bit of citrus.",
-  "contributedBy": "Sam Mason <samjbmason>",
-  "likes": 0,
-  "comments": [],
-  "price": 5,
-  "apiKey": "F40XM1J-XYP4CV9-HC3RZRB-BJMWWQN",
-  "comment": [
-    {
-      "comment": "Probando comentario",
-      "dateComment": "2019-09-19T07:21:20.161Z"
-    },
-    {
-      "comment": "Probando SEGUNDO comentario",
-      "dateComment": "2019-09-19T07:22:47.565Z"
-    }
-  ]
-}`;
-
 const parseIngredientesToHTML = beer => {  
   const getArrayIngredients = (ingredient, mainName) => {
     let ingredientText = '';
@@ -177,7 +80,7 @@ const addCustomFields = beer => {
 const renderDetail = async id => {
   try {
     const selector = document.querySelector('.detail-beer-section');
-    const beer = await getBeerDetail(id) // Obtener via API la cerveza detail y los comentarios de esta.
+    const beer = await getBeerDetail(id);
 
     addCustomFields(beer);
 

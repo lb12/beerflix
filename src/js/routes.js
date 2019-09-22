@@ -2,6 +2,7 @@
 import { showHomePage, showDetailPage, scrollTop } from "./ui.js";
 import { renderBeersDOM } from "./beers.js";
 import { renderDetail } from "./detail.js";
+import { createLikesListener } from "./likes.js";
 
 
 page('/', () => {
@@ -11,10 +12,11 @@ page('/', () => {
     scrollTop();
 });
 
-page('/detail/:id', context => {
+page('/detail/:id', async context => {
     const { params: { id } } = context;
     showDetailPage();
-    renderDetail(id);
+    await renderDetail(id);
+    createLikesListener(id);
     scrollTop();
 });
 

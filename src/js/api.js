@@ -17,12 +17,16 @@ const getBeers = async (beerName) => {
             'X-API-KEY': API_KEY,
         }
     }).then( response => {
+        if(!response.data.success)  {
+            console.error(response.data.error);
+            return ;
+        }
         beers = response.data.beers;
     }).catch(err => {
         console.error(err);        
     });
     return beers;
-}
+};
 
 const getBeerDetail = async id => {
     const url = `${beersAPIEndpoint}/${id}`;
@@ -36,29 +40,60 @@ const getBeerDetail = async id => {
             'X-API-KEY': API_KEY,
         }
     }).then( response => {
+        if(!response.data.success)  {
+            console.error(response.data.error);
+            return ;
+        }
         beer = response.data.beer;
     }).catch(err => {
         console.error(err);        
     });
     return beer;
 };
-/*,
-setBeerLike: async id => {
-    try {
-        
-    } catch (error) {
-        console.error(error.message);
-        throw error;
-    }
-},
-setBeerComment: async (id, comment) => {
-    try {
-        
-    } catch (error) {
-        console.error(error.message);
-        throw error;
-    }
-}
- */
 
-export { getBeers, getBeerDetail };
+const setBeerLike = async id => {
+    const url = `${beersAPIEndpoint}/${id}/like`;
+    let success;
+    await axios(
+    { 
+        method: 'POST', 
+        url: url, 
+        headers: {
+            'Content-type': 'application/json',
+            'X-API-KEY': API_KEY,
+        }
+    }).then( response => {
+        success = response.data.success;
+        if(!success)
+            console.error(response.data.error);
+    }).catch(err => {
+        console.error(err);        
+    });
+    return success;
+};
+
+const setBeerComment = async (id, comment) => {
+    const url = `${beersAPIEndpoint}/${id}/comment`;
+    let success;
+    await axios(
+    { 
+        method: 'POST', 
+        url: url, 
+        headers: {
+            'Content-type': 'application/json',
+            'X-API-KEY': API_KEY,
+        },
+        data: {
+            comment: comment
+        }
+    }).then( response => {
+        success = response.data.success;
+        if(!success)
+            console.error(response.data.error);
+    }).catch(err => {
+        console.error(err);        
+    });
+    return success;
+};
+
+export { getBeers, getBeerDetail, setBeerLike, setBeerComment };
