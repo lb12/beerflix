@@ -14,8 +14,8 @@ page('/', () => {
 
 page('/detail/:id', async context => {
     const { params: { id } } = context;
-    showDetailPage();
     await renderDetail(id);
+    showDetailPage();
     createLikesListener(id);
     scrollTop();
 });
