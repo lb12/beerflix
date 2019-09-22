@@ -6,9 +6,9 @@ import { createLikesListener } from "./likes.js";
 
 
 page('/', () => {
+    const filters = JSON.parse(localStorage.getItem('filters'));
     showHomePage();
-    // TODO: Get filters
-    renderBeersDOM(/* filters */);
+    renderBeersDOM(filters);
     scrollTop();
 });
 
