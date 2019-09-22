@@ -5,3 +5,9 @@
 .show {
     display: block;
 }
+
+span.error {
+    color: red;
+    font-size: 1.1rem;
+    margin-bottom: .5rem;
+}
