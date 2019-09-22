@@ -10,18 +10,14 @@ const createLikesListener = beerId => {
     likeCounterNum = document.querySelector('#detail-social-like-counter');
     
     likeCounterDiv.addEventListener('click', async evt => {
-        evt.preventDefault();  
-        setBeerLike( beerId ).then( success => {
-            if(!success) // If error, we substract the like added before
-                updateLikeCounter(success);
-        } );
-        updateLikeCounter(true); // Show first the like, to improve UX
+        evt.preventDefault();
+        await setBeerLike( beerId );
+        updateLikeCounter();
     } );
 }
 
-const updateLikeCounter = success => {
-    const addOrSubstract = success ? 1 : -1;
-    likeCounterNum.innerText = Number.parseInt(likeCounterNum.innerText) + addOrSubstract;   
+const updateLikeCounter = () => {
+    likeCounterNum.innerText = Number.parseInt(likeCounterNum.innerText) + 1;   
 };
 
 export { createLikesListener };
