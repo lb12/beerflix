@@ -1,7 +1,5 @@
 'use strict';
 
-import { commentEventHandler } from './commentsForm.js';
-
 const commentTemplate = ({ dateComment, comment }) => `
     <div class="comment-section">
         <span class="comment-date">${dateComment}</span>
@@ -22,7 +20,6 @@ const renderComments = comments => {
         content = comments.map(commentTemplate).join('');
 
     selector.innerHTML = content;
-    commentEventHandler();
 };
 
 export { renderComments };

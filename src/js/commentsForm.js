@@ -6,7 +6,7 @@ import { toggle, renderLoader } from './ui.js';
 /**
  * Handles the submit of a new comment
  */
-const commentEventHandler = () => {
+const commentEventHandler = beerId => {
     const commentSection = document.querySelector('.detail-comments-section');
     const sendButton = document.querySelector('.send-comment-button');    
     const commentCounterIcon = document.querySelector('#comment-counter-container');
@@ -14,9 +14,7 @@ const commentEventHandler = () => {
     
     sendButton.addEventListener('click', async evt => {
         evt.preventDefault();
-        const commentText = document.querySelector('.create-comment-textarea');
-        const beerId = document.querySelector('#beer-id').value;
-
+        const commentText = document.querySelector('.create-comment-textarea');        
         const spanError = document.querySelector('.detail-comments-creation-section span.error');
 
         // Show error if no comment text
@@ -41,4 +39,14 @@ const commentEventHandler = () => {
     };
 }
 
-export { commentEventHandler };
+const renderCommentBox = () => {
+    const commentSection = document.querySelector('.detail-comments-creation-section');
+
+    commentSection.innerHTML = `
+        <span class="error hide">This field can not be empty</span>
+        <textarea class="create-comment-textarea" placeholder="Write your comment..." name="" id="" cols="30" rows="10"></textarea>
+        <button class="input send-comment-button submit-button">Send</button>
+    `;
+};
+
+export { commentEventHandler, renderCommentBox };

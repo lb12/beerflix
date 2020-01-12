@@ -1,6 +1,7 @@
 'use strict';
 
 import { getBeerDetail } from './api.js';
+import { renderCommentBox } from './commentsForm.js';
 import { renderComments } from './comments.js';
 import { renderLoader } from './ui.js';
 
@@ -93,6 +94,7 @@ const renderDetail = async id => {
     addCustomFields(beer);
 
     selector.innerHTML = beerDetailTemplate(beer);
+    renderCommentBox();
     renderComments(beer.comment);
   } catch(err) {
     console.error(err);
